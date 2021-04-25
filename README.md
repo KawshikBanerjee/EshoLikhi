@@ -1,3 +1,3 @@
 # EshoLikhi
  
-[This is an ongoing Django project; will add details once it is sufficiently complete]
+[This is an ongoing Django project; details will be added once it is sufficiently complete]
