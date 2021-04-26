@@ -91,7 +91,7 @@
 <body>
 
     <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #5f788a;"> <!-- alt: #315b7d -->
+        <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #315b7d;"> <!-- alt: #5f788a -->
           <div class="container">
             
             <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Esho Likhi</a>
@@ -123,7 +123,18 @@
         <div class="row">
           
             <div class="col-md-8">
-             {% block content %}{% endblock %}
+
+              <!-- pop-up message, if there's any -->
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              {% endif %}
+
+              <!-- main content -->
+              {% block content %}{% endblock %}
             </div>
           
             <div class="col-md-4">
