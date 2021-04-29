@@ -82,9 +82,9 @@
     
     <!-- title part -->
     {% if title %}
-        <title>Blog - {{ title }}</title>
+        <title>Esho Likhi - {{ title }}</title>
     {% else %}
-        <title>Django Blog</title>
+        <title>Esho Likhi</title>
     {% endif %}
 </head>
 
@@ -109,8 +109,13 @@
               
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Login</a>
-                <a class="nav-item nav-link" href="#">Register</a>
+                {% if user.is_authenticated %}
+                  <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                  <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                {% endif %}
               </div>
             
             </div>
