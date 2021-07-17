@@ -16,24 +16,24 @@
   text-decoration: none;
   }
 
-  .article-content {
+  .media-body .article-content {
   white-space: pre-line;
   }
 
-  .article-img {
+  .media-body .article-img {
   height: 65px;
   width: 65px;
   margin-right: 16px;
   }
 
-  .article-metadata {
+  .media-body .article-metadata {
   padding-bottom: 1px;
   margin-bottom: 4px;
   border-bottom: 1px solid #e3e3e3
   }
 
-  .article-metadata a:hover {
-  color: #333;
+  .media-body .article-metadata > a {
+  color: darkcyan;
   text-decoration: none;
   }
 
@@ -51,7 +51,13 @@
   }
 
   .account-heading {
-  font-size: 2.5rem;
+  font-weight: bold;
+  }
+
+  .article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
   }
 
   .site-header .navbar .container> a:hover {
