@@ -6,9 +6,12 @@ from django.views.generic import (
     DetailView,
     CreateView,
     UpdateView,
-    DeleteView
+    DeleteView,
+    RedirectView
 )
 from .models import Post
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 
 # to control traffic from homepage
@@ -70,6 +73,14 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         post = self.get_object()
         return True if self.request.user == post.author else False
+
+
+def PostLikeView(request, pk):
+    model = Post
+    post = get_object_or_404(Post, id=request.POST.get(object,pk))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
+
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})

@@ -13,6 +13,16 @@
         
     <h2 class="article-title">{{ object.title }}</h2>
     <p class="article-content">{{ object.content }}</p>
+    <hr>
+    <!-- <p>Likes: {{ object.likes.count }}</p> -->
+
+    <form action="{% url 'post-like' object.pk %}" method="POST">
+        {% csrf_token %}
+        <button class="btn btn-info btn-sm" type="submit" name="post_id" value="{{ object.id }}">
+            Like
+        </button> {{ object.likes.count }} Likes
+    </form>  <br>
+
     {% if object.author == user %}
     <a class="btn btn-success" href="{% url 'post-update' object.id %}">Update</a>
     <a class="btn btn-danger" href="{% url 'post-delete' object.id %}">Delete</a>

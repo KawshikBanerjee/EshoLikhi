@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on localhost:8000
+From: webmaster@localhost
+To: k.banerjee2024@gmail.com
+Date: Sun, 25 Jul 2021 12:42:24 -0000
+Message-ID: <162721694422.11172.3425178404986729080@CairParavel>
+
+
+You're receiving this email because you requested a password reset for your user account at localhost:8000.
+
+Please go to the following page and choose a new password:
+
+http://localhost:8000/password-reset-confirm/NQ/aqcumo-a2508938c9aec18387d89fe709245543/
+
+Your username, in case you’ve forgotten: kawshikbanerjee
+
+Thanks for using our site!
+
+The localhost:8000 team
+
+
+
+-------------------------------------------------------------------------------
